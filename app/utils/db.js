@@ -1,3 +1,5 @@
+
+
 export default class DB {
 
   static connect(params){
@@ -5,5 +7,7 @@ export default class DB {
     return this.connectDB(connectUrl, params.database)
   }
 
-  static connectDB(connectUrl, dbName)
+  static connectDB(connectUrl, dbName){
+
+  }
 }
