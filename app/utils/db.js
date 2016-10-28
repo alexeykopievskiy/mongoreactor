@@ -10,4 +10,8 @@ export default class DB {
   static connectDB(connectUrl, dbName){
 
   }
+
+  static disconnectDB(){
+    
+  }
 }
