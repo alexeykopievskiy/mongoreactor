@@ -1,0 +1,25 @@
+{
+  "name": "mongoreactor",
+  "version": "1.0.0",
+  "description": "Desctop app for watching MongoDB on React.js+Electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeykopievskiy/mongoreactor.git"
+  },
+  "keywords": [
+    "Electron",
+    "React.js",
+    "MongoDB",
+    "Redux"
+  ],
+  "author": "Alexey Kopievskiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexeykopievskiy/mongoreactor/issues"
+  },
+  "homepage": "https://github.com/alexeykopievskiy/mongoreactor#readme"
+}
