@@ -4,7 +4,7 @@
   "description": "Desctop app for watching MongoDB on React.js+Electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
