@@ -1,17 +1,28 @@
+const MongoClient = require('mongodb').MongoClient;
+const Server = require('mongodb').Server
 
 
 export default class DB {
 
-  static connect(params){
-    const connectUrl = `mongodb://${params.server}:${params.port}/${params.database}`
-    return this.connectDB(connectUrl, params.database)
+  constructor(){
+    this.MongoConnect = null
+    this.serverAddr = null
+    this.serverPort = null
   }
 
-  static connectDB(connectUrl, dbName){
+  static connect(params){
+    this.serverAddr = params.server_url;
+    this.serverPort = params.server_port;
 
+    this.connectDB(this.serverAddr, this.serverPort);
+  }
+
+  static connectDB(server_url, server_port){
+    this.MongoConnect = new MongoClient(new Server(`${server_url}`, server_port), {native_parser: true})
+    console.log(MongoClient);
   }
 
   static disconnectDB(){
-    
+
   }
 }
