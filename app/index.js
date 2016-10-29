@@ -11,7 +11,6 @@ import './app.global.css';
 import { connectDB } from './actions/connect'
 
 const store = configureStore();
-console.log(store);
 
 store.dispatch(connectDB())
 
