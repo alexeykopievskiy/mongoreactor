@@ -10,21 +10,36 @@ export default class DB {
     this.serverPort = null
   }
 
-  static connect(params){
+  static connect(params, auth){
+
+    let connectUrl = null
+
     this.serverAddr = params.server_url;
     this.serverPort = params.server_port;
+    this.authSource = params.auth_source;
 
-    return this.connectDB(this.serverAddr, this.serverPort);
+    if(auth){
+      this.userName = params.user_name || '';
+      this.userPassword = params.user_password || '';
+      this.authMechanism = params.auth_mechanism || '';
+
+      connectUrl = `mongodb://${this.userName}:${this.userPassword}@${this.serverAddr}:${this.serverPort}?${this.authMechanism}&${this.authSource}`;
+    }
+    else{
+      connectUrl = `mongodb://${this.serverAddr}:${this.serverPort}?${this.authSource}`;
+    }
+
+    return this.connectDB(connectUrl);
   }
 
-  static connectDB(server_url, server_port){
+  static connectDB(params){
+    console.log(params, 'iiii');
     return new Promise((resolve, reject) => {
-      MongoClient.connect(`mongodb://${server_url}:${server_port}/test`, (error, database) => {
+      /*MongoClient.connect(`mongodb://${server_url}:${server_port}/test`, (error, database) => {
         this.MongoError = error;
         this.MongoConnect = database;
-        console.log(this.MongoConnect, 'ddd');
         resolve(database)
-      })
+      })*/
     })
   }
 
