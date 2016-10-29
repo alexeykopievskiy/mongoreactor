@@ -7,7 +7,13 @@ import App from './containers/App';
 import configureStore from './store/configureStore';
 import './app.global.css';
 
+//test case
+import { connectDB } from './actions/connect'
+
 const store = configureStore();
+console.log(store);
+
+store.dispatch(connectDB())
 
 render(
   <Provider store={store}>
