@@ -22,9 +22,15 @@ const config = validate(merge(baseConfig, {
 
   module: {
     loaders: [
-      // Extract all .global.css to style.css as is
       {
-        test: /\.global\.css$/,
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract(
+          'style-loader',
+          'css-loader!less-loader'
+        )
+      },
+      {
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader'

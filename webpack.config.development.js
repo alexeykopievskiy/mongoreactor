@@ -37,6 +37,10 @@ export default validate(merge(baseConfig, {
     // ],
     loaders: [
       {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
+      {
         test: /\.global\.css$/,
         loaders: [
           'style-loader',
