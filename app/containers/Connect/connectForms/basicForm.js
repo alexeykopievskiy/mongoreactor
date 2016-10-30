@@ -16,7 +16,7 @@ class BasicForm extends Component {
         </div>
         <div>
           <label htmlFor="use_auth">Use auth</label>
-          <Field name="use_auth" id="use_auth" component="input" type="checkbox"/>
+          <Field name="use_auth" id="use_auth" onChange={value => console.log(value.target.checked)}  component="input" type="checkbox"/>
         </div>
         <button type="submit">Connect</button>
       </form>
