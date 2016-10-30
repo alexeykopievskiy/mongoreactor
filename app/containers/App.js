@@ -1,6 +1,8 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
 
+import AuthContainer from './Connect/authContainer'
+
 export default class App extends Component {
   static propTypes = {
     children: PropTypes.element.isRequired
@@ -9,7 +11,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello</h1>
+
+        <AuthContainer />
       </div>
     );
   }
