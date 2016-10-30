@@ -3,8 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 
 class BasicForm extends Component {
   render() {
-    const { handleSubmit, useAuth } = this.props;
-    console.log(useAuth);
+    const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
         <div>
@@ -17,7 +16,7 @@ class BasicForm extends Component {
         </div>
         <div>
           <label htmlFor="use_auth">Use auth</label>
-          <Field name="use_auth" id="use_auth" onChange={value => console.log(value.target)} value={useAuth} component="input" type="checkbox"/>
+          <Field name="use_auth" id="use_auth" component="input" type="checkbox"/>
         </div>
         <button type="submit">Connect</button>
       </form>
@@ -25,9 +24,8 @@ class BasicForm extends Component {
   }
 }
 
-// Decorate the form component
 BasicForm = reduxForm({
-  form: 'contact' // a unique name for this form
+  form: 'contact'
 })(BasicForm);
 
 export default BasicForm;

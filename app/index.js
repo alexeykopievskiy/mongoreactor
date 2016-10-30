@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
-import './app.global.css';
 
 //test case
 import { connectDB } from './actions/connect'
