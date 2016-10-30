@@ -25,7 +25,7 @@ class AuthContainer extends React.Component{
   }
   render() {
     return (
-      <BasicForm onSubmit={this.handleSubmit} />
+      <BasicForm onSubmit={this.handleSubmit} useAuth={this.state.useAuth}/>
     );
   }
 }

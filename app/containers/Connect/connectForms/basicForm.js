@@ -3,8 +3,8 @@ import { Field, reduxForm } from 'redux-form';
 
 class BasicForm extends Component {
   render() {
-    const { handleSubmit } = this.props;
-    console.log(this.props.authCheck);
+    const { handleSubmit, useAuth } = this.props;
+    console.log(useAuth);
     return (
       <form onSubmit={handleSubmit}>
         <div>
@@ -17,7 +17,7 @@ class BasicForm extends Component {
         </div>
         <div>
           <label htmlFor="use_auth">Use auth</label>
-          <Field name="use_auth" id="use_auth" onChange={value => console.log(value.target)} component="input" type="checkbox"/>
+          <Field name="use_auth" id="use_auth" onChange={value => console.log(value.target)} value={useAuth} component="input" type="checkbox"/>
         </div>
         <button type="submit">Connect</button>
       </form>
