@@ -6,6 +6,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
 
+import './assets/src/semantic.less'
+import './assets/src/theme.less'
+
 //test case
 import { connectDB } from './actions/connect'
 
