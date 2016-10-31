@@ -48,13 +48,6 @@ export default validate(merge(baseConfig, {
         ]
       },
       {
-        test: /^((?!\.global).)*\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        ]
-      },
-      {
         test: /\.jpe?g$|\.gif$|\.png$|\.ico|\.svg(\?v=.*)?$|\.otf|\.woff(\?v=.*)?$|\.ttf(\?v=.*)?$|\.eot(\?v=.*)?$|\.woff?2(\?v=.*)?/, // eslint-disable-line max-len
         loader: 'file-loader?name=[path][name].[ext]'
       }
